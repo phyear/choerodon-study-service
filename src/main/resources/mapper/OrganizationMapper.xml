@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hand.choerodonstudyservice.infra.mapper.OrganizationMapper">
+    <resultMap id="baseMap" type="com.hand.choerodonstudyservice.infra.dto.OrganizationsDTO">
+     <id column="ID" property="id" jdbcType="BIGINT"/>
+     <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="CODE" property="code" jdbcType="VARCHAR"/>
+        <result column="USER_ID" property="userId" jdbcType="VARCHAR"/>
+        <result column="owner_login_name" property="ownerLoginName" jdbcType="VARCHAR"/>
+        <result column="owner_realName" property="ownerRealName" jdbcType="VARCHAR"/>
+        <result column="owner_phone" property="ownerPhone" jdbcType="VARCHAR"/>
+        <result column="owner_email" property="ownerEmail" jdbcType="VARCHAR"/>
+     <collection property="projects" column="ID" select="com.hand.choerodonstudyservice.infra.mapper.ProjectMapper.queryByOrganizationId" />
+    </resultMap>
+
+    <select id="queryById" resultMap="baseMap">
+        select  * from tb_organization where id=#{id}
+    </select>
+</mapper>
