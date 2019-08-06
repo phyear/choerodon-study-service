@@ -2,6 +2,9 @@ package com.hand.choerodonstudyservice.infra.dto;
 
 import javax.persistence.*;
 
+/**
+ * @author zhaotianxin
+ */
 @Table(name = "tb_users")
 public class UserDTO {
     @Id
@@ -45,5 +48,15 @@ public class UserDTO {
 
     public void setOrganizationId(Long organizationId) {
         this.organizationId = organizationId;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" +
+                "id=" + id +
+                ", loginName='" + loginName + '\'' +
+                ", email='" + email + '\'' +
+                ", organizationId=" + organizationId +
+                '}';
     }
 }

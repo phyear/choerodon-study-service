@@ -7,6 +7,10 @@ import javax.persistence.Column;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
+
+/**
+ * @author zhaotianxin
+ */
 @Table(name = "tb_organization")
 public class OrganizationDTO {
    @Id

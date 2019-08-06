@@ -10,6 +10,9 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 
+/**
+ * @author zhaotianxin
+ */
 @Service
 public class UserServiceImpl implements UserService {
     @Resource
@@ -19,7 +22,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDTO create(int id, int organizationId) {
-        UserDTO usersDTO = feign.queryUsersByOrganization_idAndUserId(id, organizationId).getBody();
+        UserDTO usersDTO = feign.queryUsersByOrganizationIdAndUserId(id, organizationId).getBody();
         if(usersDTO==null){
             return   null;
         }

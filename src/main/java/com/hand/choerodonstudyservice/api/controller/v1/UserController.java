@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
+/**
+ * @author zhaotianxin
+ */
 @RequestMapping("/v1/users")
 @RestController
 public class UserController {
@@ -28,6 +31,6 @@ public class UserController {
     @ApiOperation("根据id和组织号查询获取用户信息并插入数据库")
     @Permission(type = ResourceType.SITE)
     public ResponseEntity<PageInfo<UserDTO>> queryPage(@RequestParam(defaultValue = "1") int page, @RequestParam(defaultValue = "10") int pageSize){
-        return  new ResponseEntity<PageInfo<UserDTO>>(userService.queryByPage(page,pageSize), HttpStatus.OK);
+        return  new ResponseEntity<PageInfo<UserDTO>>(userService.pagingQuery(page,pageSize), HttpStatus.OK);
     }
 }

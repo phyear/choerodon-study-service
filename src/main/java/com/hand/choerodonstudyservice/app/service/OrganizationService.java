@@ -8,7 +8,17 @@ import com.hand.choerodonstudyservice.infra.dto.OrganizationDTO;
  */
 public interface OrganizationService {
 
-    OrganizationDTO create(int organizations);
+    /**
+     * 添加组织
+     * @param organizationId 组织Id
+     * @return 组织DTO
+     */
+    OrganizationDTO create(int organizationId);
 
-    OrganizationDTO queryById(int id);
+    /**
+     * 查询组织
+     * @param organizationId 组织Id
+     * @return 组织DTO
+     */
+    OrganizationDTO queryById(int organizationId);
 }

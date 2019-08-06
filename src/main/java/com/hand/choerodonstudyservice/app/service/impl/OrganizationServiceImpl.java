@@ -10,6 +10,9 @@ import com.hand.choerodonstudyservice.infra.mapper.ProjectMapper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * @author zhaotianxin
+ */
 
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
@@ -23,7 +26,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     @Override
     @Transactional
     public OrganizationDTO create(int organizationId) {
-        OrganizationDTO body = feign.queryByOrganization_id(organizationId).getBody();
+        OrganizationDTO body = feign.queryByOrganizationId(organizationId).getBody();
 
         if (body == null) {
             return null;

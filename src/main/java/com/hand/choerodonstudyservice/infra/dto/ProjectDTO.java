@@ -4,6 +4,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 
+
+/**
+ * @author zhaotianxin
+ *
+ */
 @Table(name="tb_project")
 public class ProjectDTO {
     @Id
