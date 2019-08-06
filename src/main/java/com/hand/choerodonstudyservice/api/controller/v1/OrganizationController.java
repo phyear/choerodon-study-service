@@ -1,8 +1,7 @@
 package com.hand.choerodonstudyservice.api.controller.v1;
 
-import com.hand.choerodonstudyservice.app.service.OrganizationsService;
-import com.hand.choerodonstudyservice.infra.dto.OrganizationsDTO;
-import com.hand.choerodonstudyservice.infra.feign.IamServiceFeign;
+import com.hand.choerodonstudyservice.app.service.OrganizationService;
+import com.hand.choerodonstudyservice.infra.dto.OrganizationDTO;
 import io.choerodon.base.annotation.Permission;
 import io.choerodon.base.enums.ResourceType;
 import io.swagger.annotations.ApiOperation;
@@ -17,24 +16,24 @@ import javax.annotation.Resource;
 
 @RequestMapping("/v1/organizations")
 @RestController
-public class OrganizationsController {
+public class OrganizationController {
 
       @Resource
-      OrganizationsService organizationsService;
+      OrganizationService organizationService;
      @GetMapping("/{id}/create")
      @ApiOperation("根据id查询获取iam的组织信息并插入数据库")
      @Permission(type = ResourceType.SITE)
-     public ResponseEntity<OrganizationsDTO> create(@PathVariable("id") int id){
-         OrganizationsDTO organizations=organizationsService.create(id);
-         return new ResponseEntity<OrganizationsDTO>(organizations,HttpStatus.OK);
+     public ResponseEntity<OrganizationDTO> create(@PathVariable("id") int id){
+         OrganizationDTO organizations= organizationService.create(id);
+         return new ResponseEntity<OrganizationDTO>(organizations,HttpStatus.OK);
 
       }
 
     @GetMapping("/{organizations_id}")
     @ApiOperation("根据id查询获取iam的组织信息")
     @Permission(type = ResourceType.SITE)
-      public ResponseEntity<OrganizationsDTO> queryById(@PathVariable("organizations_id") int id){
-        return  new ResponseEntity<OrganizationsDTO>(organizationsService.queryById(id),HttpStatus.OK);
+      public ResponseEntity<OrganizationDTO> queryById(@PathVariable("organizations_id") int organizationId){
+        return  new ResponseEntity<OrganizationDTO>(organizationService.queryById(organizationId),HttpStatus.OK);
       }
 
 }

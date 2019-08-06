@@ -1,5 +1,7 @@
 package com.hand.choerodonstudyservice.app.service.impl;
 
+import javax.annotation.Resource;
+
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.hand.choerodonstudyservice.app.service.ProjectService;
@@ -8,7 +10,7 @@ import com.hand.choerodonstudyservice.infra.mapper.ProjectMapper;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
+
 
 @Service
 public class ProjectServiceImpl implements ProjectService {
@@ -18,8 +20,7 @@ public class ProjectServiceImpl implements ProjectService {
     @Override
     public PageInfo<ProjectDTO> queryPage(int page, int pageSize) {
         PageHelper.startPage(page,pageSize);
-
-        PageInfo<ProjectDTO> pageInfo=new PageInfo<>(projectMapper.selectAll());
+        PageInfo<ProjectDTO> pageInfo = new PageInfo<>(projectMapper.selectAll());
         return pageInfo;
     }
 }

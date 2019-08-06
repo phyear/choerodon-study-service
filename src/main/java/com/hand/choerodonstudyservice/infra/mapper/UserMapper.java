@@ -1,7 +1,7 @@
 package com.hand.choerodonstudyservice.infra.mapper;
 
-import com.hand.choerodonstudyservice.infra.dto.UsersDTO;
+import com.hand.choerodonstudyservice.infra.dto.UserDTO;
 import io.choerodon.mybatis.common.Mapper;
 @org.apache.ibatis.annotations.Mapper
-public interface UsersMapper extends Mapper<UsersDTO> {
+public interface UserMapper extends Mapper<UserDTO> {
 }

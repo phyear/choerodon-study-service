@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.List;
 @Table(name = "tb_organization")
-public class OrganizationsDTO {
+public class OrganizationDTO {
    @Id
    @ApiModelProperty("组织编号")
    private Long id;
@@ -104,7 +104,7 @@ public class OrganizationsDTO {
 
    @Override
    public String toString() {
-      return "OrganizationsDTO{" +
+      return "OrganizationDTO{" +
               "id=" + id +
               ", name='" + name + '\'' +
               ", code='" + code + '\'' +

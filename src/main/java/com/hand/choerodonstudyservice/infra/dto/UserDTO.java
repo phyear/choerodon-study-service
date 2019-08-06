@@ -3,7 +3,7 @@ package com.hand.choerodonstudyservice.infra.dto;
 import javax.persistence.*;
 
 @Table(name = "tb_users")
-public class UsersDTO {
+public class UserDTO {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
