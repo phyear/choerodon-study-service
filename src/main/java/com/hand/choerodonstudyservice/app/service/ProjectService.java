@@ -5,13 +5,15 @@ import com.hand.choerodonstudyservice.infra.dto.ProjectDTO;
 
 /**
  * @author zhaotianxin
+ * @email ztxemail@163.com
  */
 public interface ProjectService {
+
     /**
      * 分页查询项目信息
      * @param page 跳转页
      * @param pageSize 每页显示的记录数
-     * @return PageInfo<ProjectDTO> PageInfo
+     * @return
      */
     PageInfo<ProjectDTO> queryPage(int page,int pageSize);
 }

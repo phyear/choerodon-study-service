@@ -17,15 +17,20 @@ import io.swagger.annotations.ApiOperation;
 import io.choerodon.base.enums.ResourceType;
 import io.choerodon.base.annotation.Permission;
 
+
+@RequestMapping("/v1/organizations")
+@RestController
 /**
  * @author zhaotianxin
  */
-@RequestMapping("/v1/organizations")
-@RestController
 public class OrganizationController {
 
-    @Resource
-    OrganizationService organizationService;
+
+    private OrganizationService organizationService;
+
+    public OrganizationController(OrganizationService organizationService) {
+       this.organizationService = organizationService;
+    }
 
     @GetMapping("/{id}/create")
     @ApiOperation("根据id查询获取iam的组织信息并插入数据库")

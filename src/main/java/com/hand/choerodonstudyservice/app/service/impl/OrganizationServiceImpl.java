@@ -13,7 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 /**
  * @author zhaotianxin
  */
-
 @Service
 public class OrganizationServiceImpl implements OrganizationService {
     @Resource
@@ -22,6 +21,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     OrganizationMapper organizationsMapper;
     @Resource
     ProjectMapper projectMapper;
+
 
     @Override
     @Transactional
